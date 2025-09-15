@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Detalhes de <%= cliente.nome %></title>
+  </head>
+  <body>
+    <h1>Detalhes do Cliente</h1>
+    <p><strong>ID:</strong> <%= cliente.id %></p>
+    <p><strong>Nome:</strong> <%= cliente.nome %></p>
+    <p><strong>Email:</strong> <%= cliente.email %></p>
+    <br />
+    <a href="/clientes/editar/<%= cliente.id %>">Editar Cliente</a>
+    <br /><br />
+    <a href="/clientes">Voltar para a lista</a>
+  </body>
+</html>

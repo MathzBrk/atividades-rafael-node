@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lista de Clientes</title>
+  </head>
+  <body>
+    <h1>Gestão de Clientes</h1>
+    <a href="/clientes/novo">Cadastrar Novo Cliente</a>
+    <hr />
+    <h2>Lista de Clientes</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% clientes.forEach(cliente => { %>
+        <tr>
+          <td><%= cliente.id %></td>
+          <td><%= cliente.nome %></td>
+          <td><%= cliente.email %></td>
+          <td>
+            <a href="/clientes/detalhe/<%= cliente.id %>">Ver Detalhes</a>
+            <a href="/clientes/editar/<%= cliente.id %>">Editar</a>
+            <form method="POST" action="/clientes/deletar/<%= cliente.id %>" style="display:inline;" onsubmit="return confirm('Tem certeza que deseja deletar este cliente?');">
+              <button type="submit">Deletar</button>
+            </form>
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <br />
+    <a href="/">Voltar para Home</a>
+  </body>
+</html>
